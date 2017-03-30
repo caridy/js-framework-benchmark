@@ -68,6 +68,8 @@ export let frameworks = [
     f("ractive-v0.8.9-keyed", false),
     f("ractive-v0.8.9-non-keyed", true),
     f("ractive-edge", true),
+    f("raptor-v0.6.0-cmps-keyed", false),
+    f("raptor-v0.6.0-keyed", false),
     f("react-lite-v0.15.30", false),
     f("react-v15.4.2-keyed", false),
     f("react-v15.4.2-non-keyed", true),

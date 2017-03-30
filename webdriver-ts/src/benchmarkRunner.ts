@@ -158,7 +158,7 @@ function runMemOrCPUBenchmark(framework: FrameworkData, benchmark: Benchmark) : 
         let driver = buildDriver();
         return forProm(0, config.REPEAT_RUN, () => {
             setUseShadowRoot(framework.useShadowRoot);
-            return driver.get(`http://localhost:8080/${framework.uri}/`)
+            return driver.get(`http://localhost:9090/${framework.uri}/`)
             .then(() => initBenchmark(driver, benchmark, framework))
             .then(() => runBenchmark(driver, benchmark, framework))
             .catch((e) => {
