@@ -117,7 +117,7 @@ function runBench(frameworkNames: string[]) {
         let text: string;
         let nonKeyedRun = false, nonKeyedRemove = false, nonKeyedSwap = false;
         setUseShadowRoot(framework.useShadowRoot);
-        return driver.get(`http://localhost:8080/${framework.uri}/`)
+        return driver.get(`http://localhost:9090/${framework.uri}/`)
             .then(() => testElementLocatedById(driver, "add"))
             .then(() => clickElementById(driver,'run'))
             .then(() => testTextContains(driver,'//tbody/tr[1000]/td[1]','1000'))
