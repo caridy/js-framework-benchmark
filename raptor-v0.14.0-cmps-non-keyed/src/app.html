@@ -3,7 +3,7 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>Raptor v0.6.1-cmps-keyed</h1>
+                    <h1>Raptor v0.13.3-cmps-non-keyed</h1>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -33,7 +33,6 @@
             <tbody>
                 <template repeat:for="row of state.rows">
                     <tr is="x-row"
-                        key={row.id} 
                         class={row.className}
                         label={row.label} 
                         index={row.id} 

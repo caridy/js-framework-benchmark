@@ -3,7 +3,7 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>Raptor v0.6.1-non-keyed</h1>
+                    <h1>Raptor v0.13.3-cmps-keyed</h1>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -31,16 +31,15 @@
         </div>
         <table class="table table-hover table-striped test-data">
             <tbody>
-                <tr repeat:for="row of state.rows" class={row.className}>
-                    <td class="col-md-1">{row.id}</td>
-                    <td class="col-md-4">
-                        <a onclick={handleSelect} data-x={row.id}>{row.label}</a>
-                    </td>
-                    <td class="col-md-1">
-                        <a onclick={handleRemove} data-x={row.id}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    </td>
-                    <td class="col-md-6"></td>
-                </tr>
+                <template repeat:for="row of state.rows">
+                    <tr is="x-row"
+                        key={row.id} 
+                        class={row.className}
+                        label={row.label} 
+                        index={row.id} 
+                        data-x={row.id}
+                        onremove={handleRemove} onselect={handleSelect}></tr>
+                </template>
             </tbody>
         </table>
         <span class="preloadicon glyphicon glyphicon-remove" aria-hidden="true"></span>
