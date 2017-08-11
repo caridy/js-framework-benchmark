@@ -31,16 +31,18 @@
         </div>
         <table class="table table-hover table-striped test-data">
             <tbody>
-                <tr repeat:for="row of state.rows" class={row.className}>
-                    <td class="col-md-1">{row.id}</td>
-                    <td class="col-md-4">
-                        <a onclick={handleSelect} data-x={row.id}>{row.label}</a>
-                    </td>
-                    <td class="col-md-1">
-                        <a onclick={handleRemove} data-x={row.id}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                    </td>
-                    <td class="col-md-6"></td>
-                </tr>
+                <template for:each={state.rows} for:item="row">
+                    <tr class={row.className}>
+                        <td class="col-md-1">{row.id}</td>
+                        <td class="col-md-4">
+                            <a onclick={handleSelect} data-x={row.id}>{row.label}</a>
+                        </td>
+                        <td class="col-md-1">
+                            <a onclick={handleRemove} data-x={row.id}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                        </td>
+                        <td class="col-md-6"></td>
+                    </tr>
+                </template>
             </tbody>
         </table>
         <span class="preloadicon glyphicon glyphicon-remove" aria-hidden="true"></span>

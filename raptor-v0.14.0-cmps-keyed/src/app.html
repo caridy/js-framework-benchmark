@@ -31,7 +31,7 @@
         </div>
         <table class="table table-hover table-striped test-data">
             <tbody>
-                <template repeat:for="row of state.rows">
+                <template for:each={state.rows} for:item="row">
                     <tr is="x-row"
                         key={row.id} 
                         class={row.className}

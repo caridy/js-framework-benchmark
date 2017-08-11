@@ -38,7 +38,9 @@ import { Element } from "raptor-engine";
 export default class App extends Element {
     constructor() {
         super();
-        this.state.rows = computeRows(store);
+        this.state = {
+            rows: computeRows(store),
+        };
     }
     render() {
         return html;

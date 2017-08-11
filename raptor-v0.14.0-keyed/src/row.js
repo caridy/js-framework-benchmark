@@ -2,20 +2,22 @@ import { Element } from "raptor-engine";
 import html from "./row.html";
 
 export default class tr extends Element {
-    index;
-    label;
+    @api index;
+    @api label;
 
     render() {
         return html;
     }
     handleSelect() {
-        const event = document.createEvent('CustomEvent');
-        event.initCustomEvent('select', true, true, null);
+        const event = new CustomEvent('select', {
+            bubbles: false,
+        });
         this.dispatchEvent(event);
     }
     handleRemove() {
-        const event = document.createEvent('CustomEvent');
-        event.initCustomEvent('remove', true, true, null);
+        const event = new CustomEvent('remove', {
+            bubbles: false,
+        });
         this.dispatchEvent(event);
     }
 }
