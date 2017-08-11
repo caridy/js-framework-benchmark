@@ -33,7 +33,7 @@ function computeRows(store) {
 }
 
 import html from "./app.html";
-import { Element } from "raptor-engine";
+import { Element } from "engine";
 
 export default class App extends Element {
     constructor() {
