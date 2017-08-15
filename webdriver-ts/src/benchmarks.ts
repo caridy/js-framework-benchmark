@@ -187,7 +187,7 @@ const benchStartup: Benchmark = {
     description: "Time for loading, parsing and starting up",
     type: BenchmarkType.STARTUP,
     init: (driver: WebDriver) =>
-           driver.get(`http://localhost:9090/`),
+           driver.get(`http://localhost:8080/`),
     run: (driver: WebDriver, framework: FrameworkData) => 
             driver.get(`http://localhost:8080/${framework.uri}/`)
             .then(() => testElementLocatedById(driver, "run", SHORT_TIMEOUT))
