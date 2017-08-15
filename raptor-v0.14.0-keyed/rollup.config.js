@@ -19,7 +19,5 @@ module.exports = {
     entry: path.resolve('src/main.js'),
     dest: path.resolve(`dist/main.js`),
     format: 'iife',
-    external: ['engine'],
-    globals: { engine: 'Engine' },
     plugins,
 };
